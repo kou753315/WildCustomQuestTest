@@ -352,21 +352,21 @@
         async function loadData() {
             try {
                 // Load enemies data
-                const enemiesResponse = await fetch('./enemies.json');
+                const enemiesResponse = await fetch('enemies.json');
                 if (!enemiesResponse.ok) {
                     throw new Error(`Failed to load enemies.json: ${enemiesResponse.status} ${enemiesResponse.statusText}`);
                 }
                 enemiesData = await enemiesResponse.json();
                 
                 // Load items data
-                const itemsResponse = await fetch('./items.json');
+                const itemsResponse = await fetch('items.json');
                 if (!itemsResponse.ok) {
                     throw new Error(`Failed to load items.json: ${itemsResponse.status} ${itemsResponse.statusText}`);
                 }
                 itemsData = await itemsResponse.json();
                 
                 // Load reward list data
-                const rewardResponse = await fetch(`./reward_list_${currentLanguage}.json`);
+                const rewardResponse = await fetch(`reward_list_${currentLanguage}.json`);
                 if (!rewardResponse.ok) {
                     throw new Error(`Failed to load reward_list_${currentLanguage}.json: ${rewardResponse.status} ${rewardResponse.statusText}`);
                 }
@@ -454,7 +454,7 @@
                 
                 // Try to load reward list for the selected language
                 try {
-                    fetch(`./reward_list_${currentLanguage}.json`)
+                    fetch(`reward_list_${currentLanguage}.json`)
                         .then(response => {
                             if (response.ok) {
                                 return response.json();
